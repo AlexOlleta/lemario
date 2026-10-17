@@ -1,11 +1,15 @@
 # Lemario
 
-Interfaz web sencilla para la API **Lemario** (palabras del diccionario de la RAE): rimas consonantes, búsquedas, palabra al azar, significados y comprobación de palabras. Pensada para personas sin conocimientos técnicos; solo expone la API, no calcula nada por su cuenta.
+Interfaz web sencilla para la API [**lemario-api**](https://github.com/AlexOlleta/lemario-api) (palabras del diccionario de la RAE): rimas consonantes, búsquedas, palabra al azar, significados y comprobación de palabras. Pensada para personas sin conocimientos técnicos; solo expone la API, no calcula nada por su cuenta.
+
+## Requisitos
+
+Esta web **no funciona por sí sola**: necesita la API [lemario-api](https://github.com/AlexOlleta/lemario-api) arrancada y una de sus claves (`LEMARIO_API_KEYS`). Consulta su repositorio para instalarla y configurarla.
 
 ## Cómo funciona
 
 ```
-Navegador ──► este servidor (FastAPI) ──► API Lemario (:8000)
+Navegador ──► este servidor (FastAPI) ──► lemario-api (:8000)
                  guarda la X-API-Key
 ```
 
