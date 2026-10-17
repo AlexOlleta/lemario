@@ -1,0 +1,16 @@
+name: lemario
+
+services:
+  web:
+    build: .
+    ports:
+      - "127.0.0.1:${PORT:-8080}:8080"
+    environment:
+      LEMARIO_API_URL: ${LEMARIO_API_URL:-http://host.docker.internal:8000}
+      LEMARIO_API_KEY: ${LEMARIO_API_KEY:?Set LEMARIO_API_KEY in .env}
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    read_only: true
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    restart: unless-stopped

@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>Lemario</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%234a3fd0' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20'/%3E%3Cpath d='M9 7h6'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+  <script src="theme.js"></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <p class="brand"><span id="brand-icon" class="brand-icon" aria-hidden="true"></span>Lemario</p>
+      <nav id="menu" aria-label="Herramientas"></nav>
+      <div id="theme" class="theme" role="group" aria-label="Aspecto"></div>
+      <p id="status" class="status" role="status">
+        <span class="dot" aria-hidden="true"></span>
+        <span id="status-text">Comprobando…</span>
+      </p>
+    </aside>
+
+    <main>
+      <div id="banner" class="banner" role="alert" hidden>
+        <p id="banner-text"></p>
+        <button id="banner-retry" type="button"><span class="spinner" aria-hidden="true" hidden></span><span id="banner-retry-text">Reintentar</span></button>
+      </div>
+
+      <header>
+        <h1 id="title"></h1>
+        <p id="help" class="help"></p>
+      </header>
+
+      <form id="form">
+        <div id="fields" class="fields"></div>
+        <details id="filters" class="filters">
+          <summary>Más opciones</summary>
+          <div class="filters-body">
+            <fieldset>
+              <legend class="label">Incluir también</legend>
+              <div class="options">
+                <label class="check"><input type="checkbox" name="include_phrases"> Expresiones de varias palabras</label>
+                <label class="check"><input type="checkbox" name="include_affixes"> Prefijos y sufijos</label>
+                <label class="check"><input type="checkbox" name="include_proper"> Nombres propios</label>
+              </div>
+            </fieldset>
+            <fieldset>
+              <legend class="label">Cuánto se usan las palabras</legend>
+              <div class="options">
+                <label class="check"><input type="checkbox" name="tier" value="unknown"> Sin datos de uso</label>
+                <label class="check"><input type="checkbox" name="tier" value="rare"> Poco usuales</label>
+                <label class="check"><input type="checkbox" name="tier" value="medium"> Usuales</label>
+                <label class="check"><input type="checkbox" name="tier" value="common"> Muy usuales</label>
+              </div>
+            </fieldset>
+          </div>
+        </details>
+        <div class="actions">
+          <button id="submit" type="submit" class="primary"></button>
+        </div>
+      </form>
+
+      <section id="result" class="result" aria-live="polite"></section>
+    </main>
+  </div>
+</body>
+</html>
